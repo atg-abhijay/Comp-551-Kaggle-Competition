@@ -23,6 +23,7 @@ for i in range(len(images)):
     flatRawIm.append((images[i][1]).reshape(100,100))
 flatRawIm = np.array(flatRawIm)
 
+#Method below was an attempt to pre-process
 #patches = image.extract_patches_2d((images[23][1]).reshape(100,100), (1,1))
 #img = image.reconstruct_from_patches_2d(patches, (100,100))
 #plt.imshow(img)
@@ -38,10 +39,11 @@ accuracies = []
 # loop over various values of `k` for the k-Nearest Neighbor classifier
 
 
-          # train the k-Nearest Neighbor classifier with the current value of `k`
+# train the k-Nearest Neighbor classifier with the current value of `k`
+#yields an error of bad dimension mismatch
 model = KNeighborsClassifier(n_neighbors=4)
 model.fit(trainData, trainLabels)
-          # evaluate the model and update the accuracies list#
+# evaluate the model and update the accuracies list#
 #score = model.score(valData, valLabels)
 #print("k=%d, accuracy=%.2f%%" % (k, score * 100))
 #accuracies.append(score)
