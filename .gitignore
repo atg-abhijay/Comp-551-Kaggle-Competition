@@ -2,3 +2,4 @@ train_images.npy
 test_images.npy
 .DS_Store
 .vscode/
+ignore
